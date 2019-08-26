@@ -200,8 +200,8 @@ var email;
 var address;
 var emojii;
 var pin;
-var passwordLength=10;
-uni;
+var sliceNinja=3;
+
 
 function start(){
 	
@@ -221,12 +221,16 @@ function start(){
 
 let slice = (obj) => {
  	
-  var randomNumber 		 =  Math.floor((Math.random() * passwordLength));
+  var randomNumber 		 =  Math.floor((Math.random() * sliceNinja));
 
-  if(obj.length>3){obj 	 =  obj.substring(randomNumber, randomNumber+3);}
+  if(obj.length>3){obj 	 =  obj.substring(randomNumber, randomNumber+2);}
 
 }
 // Slice the neccessary variables randomly
+firstName 	=	 firstName.toString();
+lastName 	= 	 lastName.toString();
+email 		=    email.toString();
+address 	=  	 address.toString();
 
 slice(firstName);
 slice(lastName);
@@ -234,19 +238,21 @@ slice(email);
 slice(address);
 
 
-// appending a random unicode value
-
+// appendable random unicode value
+var uni = 0;
 let unicodeCreator = () => { 
 
-    var random 	   = 		Math.floor(Math.random() * 800);
+    var random 	   = 		Math.floor(Math.random() * 750);
 	uni 		   = 		unicodeBlocks[random];
 }
 
 unicodeCreator();
 
+// forming the key and printing it to user
 let keygen = () => {
 
-	var gensis = firstName + email + address + emojii + address + uni + pin;
+	var gensis = uni ;
+	document.getElementById("holder").value = gensis; 
 	alert(gensis);
 
 }

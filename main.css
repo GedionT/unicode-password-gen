@@ -10,10 +10,10 @@ h1, h2 {
 
 div.window {
 	margin : 20px;
-	alignment: left;
 }
 
 input[type=text] {
+  vertical-align: 4px;
   width: 25%;
   padding: 10px 10px;
   margin: 8px 2px;
@@ -33,5 +33,5 @@ input[type=submit] {
 }
 
 input[type=submit] : hover {
-  background-color: #6A8808;
+  background-color: #326a08;
 }
