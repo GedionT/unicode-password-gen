@@ -1,6 +1,5 @@
 /*---- Unicode Blocks ----*/
 
-
 const unicodeBlocks = [
         '\u0021','\u0022','\u0023','\u0024',
         '\u0025','\u0026','\u0027','\u0028',
@@ -227,7 +226,8 @@ let slice = (obj) => {
   if(obj.length>3){obj 	 =  obj.substring(randomNumber, randomNumber+2);}
 
 }
-// Slice the neccessary variables randomly
+/*---- Slice the neccessary variables randomly ----*/
+
 firstName 	=	 firstName.toString();
 lastName 	= 	 lastName.toString();
 email 		=    email.toString();
@@ -239,7 +239,7 @@ slice(email);
 slice(address);
 
 
-// appendable random unicode value
+/*---- appendable random unicode value ----*/
 var uni = 0;
 let unicodeCreator = () => { 
 

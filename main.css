@@ -7,16 +7,23 @@ h1, h2 {
   color: #4CAF50;
 }
 
+hr {
+	margin : 4px;
+	width  : 26%;
+}
 
 div.window {
-	margin : 20px;
+	margin : 4px;
+	width  : 25%;
+	padding: 2px 4px;
+	border : 1px solid #4CAF50;
 }
 
 input[type=text] {
   vertical-align: 4px;
-  width: 25%;
-  padding: 10px 10px;
-  margin: 8px 2px;
+  width: 60%;
+  padding: 8px 8px;
+  margin: 6px 2px;
   border: none;
   border-bottom: 2px solid #4CAF50;
 
@@ -34,4 +41,9 @@ input[type=submit] {
 
 input[type=submit] : hover {
   background-color: #326a08;
+}
+
+textarea {
+	margin: 4px;
+	padding: 10px, 20px;
 }
