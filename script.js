@@ -25,7 +25,7 @@ const unicodeBlocks = [
         '\u0071','\u0072','\u0073','\u0074',
         '\u0075','\u0076','\u0077','\u0078',
         '\u0079','\u007A','\u007B','\u007C',
-        '\u007D','\u007E','\u00A1','\u00A2','\u00A3','\u00A4',
+        '\u007D','\u007E','\u00A1','\u00A2',
         '\u00A5','\u00A6','\u00A7','\u00A8',
         '\u00A9','\u00AA','\u00AB','\u00AC',
         '\u00AD','\u00AE','\u00AF','\u00B0',
@@ -170,7 +170,8 @@ const unicodeBlocks = [
         '\u268C','\u268D','\u268E','\u268F',
         '\u2690','\u2691','\u2692','\u2693',
         '\u2694','\u2695','\u2696','\u2697',
-        '\u2698','\u2699','\uD83D\uDE00','\uD83D\uDE01','\uD83D\uDE02','\uD83D\uDE03',
+        '\u2698','\u2699','\u00A3','\u00A4',
+        '\uD83D\uDE00','\uD83D\uDE01','\uD83D\uDE02','\uD83D\uDE03',
         '\uD83D\uDE04','\uD83D\uDE05','\uD83D\uDE06','\uD83D\uDE07',
         '\uD83D\uDE08','\uD83D\uDE09','\uD83D\uDE0A','\uD83D\uDE0B',
         '\uD83D\uDE0C','\uD83D\uDE0D','\uD83D\uDE0E','\uD83D\uDE0F',
@@ -191,59 +192,66 @@ const unicodeBlocks = [
         '\uD83D\uDE48','\uD83D\uDE49','\uD83D\uDE4A','\uD83D\uDE4B',
         '\uD83D\uDE4C','\uD83D\uDE4D','\uD83D\uDE4E','\uD83D\uDE4F'];
 
+/*---- Setting Global Variables ----*/
 
+var firstName;
+var lastName;
+var email;
+var address;
+var emojii;
+var pin;
+var passwordLength=10;
+uni;
 
-/*---- Global variables ----*/
+function start(){
+	
+/*---- IIE to fetch the entered values to a variable ----*/
 
-var firstName   = document.getElementById('userFirstName'); 
-var lastName    = document.getElementById('userLastName');
-var email       = document.getElementById('getEmail');
-var address     = document.getElementById('getAddress');
-var emojii		= document.getElementById('getEmojii');
-var pin 		= document.getElementById('getPin');
-var passwordLength = 10, uni;
+	(function (){
+		firstName 	=	 document.getElementById("userFirstName").value;
+		lastName 	= 	 document.getElementById("userLastName").value;
+		email 		= 	 document.getElementById("getEmail").value;
+		address 	= 	 document.getElementById("getAddress").value;
+		emojii 		= 	 document.getElementById("getEmojii").value;
+		pin 		= 	 document.getElementById("getPin").value;
+	})();
+
 
 /*---- Random Slicer ----*/
 
 let slice = (obj) => {
  	
-var randomNumber=0;
+  var randomNumber 		 =  Math.floor((Math.random() * passwordLength));
 
-	function randomizer() {
-	 		randomNumber = Math.floor((Math.random() * passwordLength));
-	 	}
-
-	 (obj.length>3)? obj = obj.substring(randomNumber, randomNumber+3): obj = obj;
+  if(obj.length>3){obj 	 =  obj.substring(randomNumber, randomNumber+3);}
 
 }
+// Slice the neccessary variables randomly
+
+slice(firstName);
+slice(lastName);
+slice(email);
+slice(address);
 
 
-// Slice the neccessary variables
-
-slice(toString(firstName));
-slice(toString(lastName));
-slice(toString(email));
-slice(toString(address));
+// appending a random unicode value
 
 let unicodeCreator = () => { 
 
-	var random = Math.floor(Math.random() * 150);
-	uni = unicodeBlocks[random];
+    var random 	   = 		Math.floor(Math.random() * 800);
+	uni 		   = 		unicodeBlocks[random];
 }
 
 unicodeCreator();
 
-// final password gensis
-var pwd;
 let keygen = () => {
-		 
-		pwd = firstName + email + lastName + pin + emojii + uni + address;
-		console.log(pwd);
+
+	var gensis = firstName + email + address + emojii + address + uni + pin;
+	alert(gensis);
+
 }
 
 keygen();
 
 
-
-
-	 
+}

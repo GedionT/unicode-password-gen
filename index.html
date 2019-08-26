@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 	<link rel="stylesheet" href="main.css">
-	<script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="script.js"></script>
     <title>Register</title>
   </head>
   <body>
@@ -11,7 +11,8 @@
     <h2>Register</h2>   
     <h4>A Unicode Password Generator</h4> <hr>
         
-	<div>
+	<div class="window">
+ 
   <form onsubmit="keygen()">
     
 <label>	First Name :</label>     <input type="text" id="userFirstName" size="10"><br>
@@ -22,11 +23,12 @@
 <label>	Pin        :</label>     <input type="text" id="getPin"        size="4"><br>	
 
  <label><input type="submit" value="Submit"></label>
-	
  </form>
-       </div>
+</div>
+ <textarea id="holder"></textarea> 
+       
 
-<textarea id="holder"> Generated Password </textarea>
+
 
     
   </body>

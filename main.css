@@ -1,13 +1,16 @@
 
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2 {
   margin: 0 0 .5em 0;
   line-height: 1.2;
   letter-spacing: -.02em;
+  color: #4CAF50;
 }
 
-label {
-  border : none;
+
+div.window {
+	margin : 20px;
+	alignment: left;
 }
 
 input[type=text] {
@@ -30,5 +33,5 @@ input[type=submit] {
 }
 
 input[type=submit] : hover {
-  background-color: #4CAB10;
+  background-color: #6A8808;
 }
