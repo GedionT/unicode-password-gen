@@ -1,3 +1,7 @@
+ body {
+ 	background-image: url('back.jpg');
+ } 
+
 h1, h2 {
   margin: 0 0 .5em 0;
   line-height: 1.2;
@@ -11,6 +15,7 @@ hr {
 }
 
 div.window {
+	background-color: white;
 	margin : 4px;
 	width  : 25%;
 	padding: 2px 4px;
