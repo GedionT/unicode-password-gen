@@ -226,6 +226,7 @@ let slice = (obj) => {
   if(obj.length>3){obj 	 =  obj.substring(randomNumber, randomNumber+2);}
 
 }
+
 /*---- Slice the neccessary variables randomly ----*/
 
 firstName 	=	 firstName.toString();
