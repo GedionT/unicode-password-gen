@@ -200,12 +200,11 @@ var email;
 var address;
 var emojii;
 var pin;
-var sliceNinja=3;
-
+var passwordLength = 8;
 
 function start(){
 	
-/*---- IIE to fetch the entered values to a variable ----*/
+/*---- IIE to fetch the entered values to a variable upon submit----*/
 
 	(function (){
 		firstName 	=	 document.getElementById("userFirstName").value;
@@ -216,46 +215,57 @@ function start(){
 		pin 		= 	 document.getElementById("getPin").value;
 	})();
 
+/*---- create appendable random unicode value ----*/
 
-/*---- Random Slicer ----*/
-
-let slice = (obj) => {
- 	
-  var randomNumber 		 =  Math.floor((Math.random() * sliceNinja));
-
-  if(obj.length>3){obj 	 =  obj.substring(randomNumber, randomNumber+2);}
-
-}
-
-/*---- Slice the neccessary variables randomly ----*/
-
-firstName 	=	 firstName.toString();
-lastName 	= 	 lastName.toString();
-email 		=    email.toString();
-address 	=  	 address.toString();
-
-slice(firstName);
-slice(lastName);
-slice(email);
-slice(address);
-
-
-/*---- appendable random unicode value ----*/
 var uni = 0;
-let unicodeCreator = () => { 
+let unicodeCreator 	= () => { 
 
-    var random 	   = 		Math.floor(Math.random() * 750);
-	uni 		   = 		unicodeBlocks[random];
+    var random 	    = 		Math.floor(Math.random() * 750);
+	uni 		    = 		unicodeBlocks[random];
 }
 
 unicodeCreator();
 
-// forming the key and printing it to user
+/*---- Add all values to an array (if not empty) by converting to individual characters -----*/
+
+var stash = [];
+ 	function stashInputs(obj){
+ 		if(obj != "") {
+ 		obj = obj.split('');
+ 		stash.push(obj);
+ 	}
+ 	}
+
+stashInputs(firstName);
+stashInputs(lastName);
+stashInputs(email);
+stashInputs(address);
+stashInputs(emojii);
+stashInputs(pin);
+stashInputs(uni);
+
+;/*---- Fisher-Yates Array Shuffling Algorithm ----*/
+
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+shuffleArray(stash);
+
+/*---- Creating the final key and printing it ----*/
+
 let keygen = () => {
 
-	var gensis = uni ;
-	document.getElementById("holder").value = gensis; 
-	alert(gensis);
+var key;
+
+	for(var i = 0; i < passwordLength ; i++)
+	{
+		key += stash[i];
+	}
+    alert(key);
+	document.getElementById("holder").value = key; 
 
 }
 
