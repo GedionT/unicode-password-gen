@@ -1,7 +1,7 @@
 body {
  	background-image: url('back.png');
  	background-repeat: no-repeat;
- 	background-size: 65%;
+ 	background-size: 75%;
  	background-position: center;
  } 
 
@@ -10,7 +10,7 @@ h1, h2, h4 {
   margin: 0 0 .5em 0;
   line-height: 1.2;
   letter-spacing: -.02em;
-  color: #ced2ce;
+  color: #070807;
 }
 
 hr {
@@ -18,19 +18,24 @@ hr {
 	width  : 85%;
 }
 
+div.container {
+  text-align: center;
+}
+
 div.window {
-	background-color: #363c2eb5;
+	background-color: #6d7168b5;
 	margin : 4px;
 	width  : 25%;
 	padding: 2px 4px;
 	border : 1px solid #acb1ac;
+	display: inline-block;
 }
 
 label {
 	margin :0 0 .6em 0;
 	line-height : 1.5;
 	font-size: 16;
-	color : #ced2ce;
+	color : #1a271a;
 
 }
 
@@ -71,7 +76,13 @@ input[type=submit] : hover {
   background-color: #61655f;
 }
 
+div.center {         
+	display: flex;
+    justify-content: center;
+}
+
 textarea {
 	margin: 4px;
 	padding: 10px, 20px;
+	display: block;
 }

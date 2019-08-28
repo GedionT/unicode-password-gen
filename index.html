@@ -2,16 +2,19 @@
 <html lang="en">
    <head>
        <meta charset="utf-8">
+       <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	     <link rel="stylesheet" href="main.css">
        <script type="text/javascript" src="unicodeBlocks.js"></script>
        <script type="text/javascript" src="script.js"></script>
-             <title>Register</title>
+             <title>Generate</title>
   </head>
   <body>
-          <h2>Register</h2>  
+          <h2>Generate</h2>  
+
+        <div class="container">
 	        <div class="window" align = "center">  
-          <h4>A Customized Unicode Password Generator</h4> 
-          <hr>
+              <h4>A Customized Unicode Password Generator</h4> 
+              <hr>
             <form onsubmit="start(); return false">
     
                 <label>	First Name </label>  <br>   <input type="text" id="userFirstName" minsize="2" size="10"><br>
@@ -23,9 +26,10 @@
 
                  <label><input type="submit" value="Submit"></label>
            </form>
-        </div>
- 
-    <textarea id="holder"></textarea> 
+           </div>
+         </div>
+    
+        <div class="center"><textarea id="holder"></textarea></div>
        
   </body>
 </html>
