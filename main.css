@@ -6,29 +6,31 @@ body {
  } 
 
 h1, h2, h4 {
+  text-align: center;
   margin: 0 0 .5em 0;
   line-height: 1.2;
   letter-spacing: -.02em;
-  color: #4CAF50;
+  color: #ced2ce;
 }
 
 hr {
 	margin : 4px;
-	width  : 26%;
+	width  : 85%;
 }
 
 div.window {
-	background-color: #98a583b5;
+	background-color: #363c2eb5;
 	margin : 4px;
 	width  : 25%;
 	padding: 2px 4px;
-	border : 1px solid #4CAF50;
+	border : 1px solid #acb1ac;
 }
 
 label {
 	margin :0 0 .6em 0;
 	line-height : 1.5;
 	font-size: 16;
+	color : #ced2ce;
 
 }
 
@@ -39,7 +41,7 @@ input[type=text] {
   position: relative;
   margin: 6px 2px;
   border: none;
-  border-bottom: 2px solid #4CAF50;
+  border-bottom: 2px solid #070807;
 
 }
 
@@ -50,12 +52,12 @@ input[type=number] {
   position: relative;
   margin: 6px 2px;
   border: none;
-  border-bottom: 2px solid #4CAF50;
+  border-bottom: 2px solid #070807;
 
 }
 
 input[type=submit] {
-  background-color: #4CAF50;
+  background-color: #0e100e;
   width: 45%;
   border: none;
   color: white;
@@ -66,7 +68,7 @@ input[type=submit] {
 }
 
 input[type=submit] : hover {
-  background-color: #a7ce8a;
+  background-color: #61655f;
 }
 
 textarea {
