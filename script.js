@@ -217,11 +217,11 @@ function start(){
 
 /*---- create appendable random unicode value ----*/
 
-var uni = 0;
+var unicode = 0;
 let unicodeCreator 	= () => { 
 
     var random 	    = 		Math.floor(Math.random() * 750);
-	uni 		    = 		unicodeBlocks[random];
+	unicode 		    = 		unicodeBlocks[random];
 }
 
 unicodeCreator();
@@ -231,8 +231,12 @@ unicodeCreator();
 var stash = [];
  	function stashInputs(obj){
  		if(obj != "") {
- 		obj = obj.split('');
- 		stash.push(obj);
+ 		 obj = obj.split('');
+
+            for(var i=0; i < obj.length ; i++){ // splits and adds individual character to array step-by-step
+ 		         stash.push(obj[i]);
+        }
+
  	}
  	}
 
@@ -242,9 +246,11 @@ stashInputs(email);
 stashInputs(address);
 stashInputs(emojii);
 stashInputs(pin);
-stashInputs(uni);
+stashInputs(unicode);
 
-;/*---- Fisher-Yates Array Shuffling Algorithm ----*/
+// console.log(stash); // to log the list of all stored characters on the array
+
+/*---- Fisher-Yates Array Shuffling Algorithm ----*/
 
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -258,13 +264,13 @@ shuffleArray(stash);
 
 let keygen = () => {
 
-var key;
+var key="";
 
 	for(var i = 0; i < passwordLength ; i++)
 	{
 		key += stash[i];
 	}
-    alert(key);
+    
 	document.getElementById("holder").value = key; 
 
 }
