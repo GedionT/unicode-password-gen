@@ -27,8 +27,8 @@ function start(){
 var unicode = 0;
 let unicodeCreator 	= () => { 
 
-    var random 	    = 		Math.floor(Math.random() * 750);
-	unicode 		    = 		unicodeBlocks[random];
+    var random 	    = 		Math.floor(Math.random() * 600);
+	unicode 		= 		unicodeBlocks[random];
 }
 
 unicodeCreator();
@@ -57,11 +57,10 @@ stashInputs(emojii);
 stashInputs(pin);
 stashInputs(unicode);
 
-// console.log(stash); // to log the list of all stored characters on the array
-
 /*---- Fisher-Yates Array Shuffling Algorithm ----*/
 
 function shuffleArray(array) {
+
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [array[i], array[j]] = [array[j], array[i]];
@@ -73,18 +72,15 @@ shuffleArray(stash);
 
 let keygen = () => {
 
-var key="";
-
+    var key="";
 	for(var i = 0; i < passwordLength ; i++)
 	{
+        if(stash[i] != null){
 		key += stash[i];
+    }
 	}
     
 	document.getElementById("holder").value = key; 
-
 }
-
 keygen();
-
-
 }
